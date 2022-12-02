@@ -1,7 +1,7 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-val input = """
+private val input = """
     1000
     2000
     3000
