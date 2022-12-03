@@ -10,13 +10,13 @@ private val input = """
 class Day2Test {
     @Test
     fun `strategy gives a total score of 15`(){
-        val result = twoA(input)
+        val result = day2A(input)
         assertEquals(15, result)
     }
 
     @Test
     fun `strategy gives a total score of 12`() {
-        val result = twoB(input)
+        val result = day2B(input)
         assertEquals(12, result)
     }
 }

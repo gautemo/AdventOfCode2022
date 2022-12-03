@@ -4,15 +4,15 @@ import shared.toIntLines
 
 fun main() {
     val input = getText("day1.txt")
-    println(oneA(input))
-    println(oneB(input))
+    println(day1A(input))
+    println(day1B(input))
 }
 
-fun oneA(input: String): Int{
+fun day1A(input: String): Int{
     return getElves(input).max()
 }
 
-fun oneB(input: String): Int{
+fun day1B(input: String): Int{
     val elves = getElves(input)
     return elves.sortedDescending().take(3).sum()
 }

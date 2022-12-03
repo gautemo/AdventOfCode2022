@@ -14,13 +14,13 @@ class Day3Test {
 
     @Test
     fun `priority sum should be 157`(){
-        val result = threeA(input)
+        val result = day3A(input)
         assertEquals(157, result)
     }
 
     @Test
     fun `priority sum should be 70 for badges`(){
-        val result = threeB(input)
+        val result = day3B(input)
         assertEquals(70, result)
     }
 }

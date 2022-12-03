@@ -3,11 +3,11 @@ import shared.toLines
 
 fun main() {
     val input = getText("day3.txt")
-    println(threeA(input))
-    println(threeB(input))
+    println(day3A(input))
+    println(day3B(input))
 }
 
-fun threeA(input: String): Int {
+fun day3A(input: String): Int {
     val backpacks = toLines(input)
     return backpacks.sumOf {
         val middle = it.length/2
@@ -16,7 +16,7 @@ fun threeA(input: String): Int {
     }
 }
 
-fun threeB(input: String): Int {
+fun day3B(input: String): Int {
     val groups = toLines(input).chunked(3)
     return groups.sumOf {
         val inCommon = itemInCommon(it[0], it[1], it[2])

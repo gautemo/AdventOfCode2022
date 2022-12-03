@@ -3,11 +3,11 @@ import shared.toLines
 
 fun main() {
     val input = getText("day2.txt")
-    println(twoA(input))
-    println(twoB(input))
+    println(day2A(input))
+    println(day2B(input))
 }
 
-fun twoA(input: String): Int{
+fun day2A(input: String): Int{
     val rounds = toLines(input).map {
         val pair = it.split(" ")
         val opponent = when(pair[0]) {
@@ -27,7 +27,7 @@ fun twoA(input: String): Int{
     return rounds.sumOf { it.first.fight(it.second) + it.first.points }
 }
 
-fun twoB(input: String): Int{
+fun day2B(input: String): Int{
     val rounds = toLines(input).map {
         val pair = it.split(" ")
         when(pair[0]) {

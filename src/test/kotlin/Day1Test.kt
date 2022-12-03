@@ -21,13 +21,13 @@ private val input = """
 class Day1Test {
     @Test
     fun `elf with most calories should carry 24000 calories`(){
-        val result = oneA(input)
+        val result = day1A(input)
         assertEquals(24000, result)
     }
 
     @Test
     fun `top three elves carry 45000 calories`() {
-        val result = oneB(input)
+        val result = day1B(input)
         assertEquals(45000, result)
     }
 }
