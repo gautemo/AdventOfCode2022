@@ -1,4 +1,5 @@
 import shared.getText
+import shared.placeInAlphabet
 import shared.toLines
 
 fun main() {
@@ -26,9 +27,4 @@ fun day3B(input: String): Int {
 
 private fun itemInCommon(vararg items: String): Char {
     return items.first().first { itemToCheck -> items.all { it.contains(itemToCheck) } }
-}
-
-private fun Char.placeInAlphabet(): Int {
-    if(code < 97) return code - 65 + 27
-    return code - 96
 }
