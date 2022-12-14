@@ -1,3 +1,4 @@
+import shared.chunks
 import shared.getText
 
 fun main() {
@@ -7,7 +8,7 @@ fun main() {
 }
 
 fun day5A(input: String): String {
-    val (drawing, procedures) = input.split("\n\n")
+    val (drawing, procedures) = input.chunks()
     val stacks = readDrawing(drawing)
     for(procedure in procedures.lines()) {
         val moveN = procedure.split(' ')[1].toInt()
@@ -21,7 +22,7 @@ fun day5A(input: String): String {
 }
 
 fun day5B(input: String): String {
-    val (drawing, procedures) = input.split("\n\n")
+    val (drawing, procedures) = input.chunks()
     val stacks = readDrawing(drawing)
     for(procedure in procedures.lines()) {
         val moveN = procedure.split(' ')[1].toInt()

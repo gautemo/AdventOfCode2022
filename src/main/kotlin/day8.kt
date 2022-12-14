@@ -1,5 +1,4 @@
 import shared.getText
-import shared.toLines
 import shared.takeWhileInclusive
 
 fun main(){
@@ -45,7 +44,7 @@ fun day8B(input: String): Int {
 }
 
 private fun toTrees(input: String): List<List<Int>> {
-    return toLines(input).map { line -> line.map { it.digitToInt() } }
+    return input.lines().map { line -> line.map { it.digitToInt() } }
 }
 
 private fun treesLeft(height: Int, xPos: Int, yPos: Int, trees: List<List<Int>>): List<Int> {

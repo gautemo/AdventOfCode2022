@@ -1,5 +1,4 @@
 import shared.getText
-import shared.toLines
 
 fun main() {
     val input = getText("day2.txt")
@@ -8,7 +7,7 @@ fun main() {
 }
 
 fun day2A(input: String): Int{
-    val rounds = toLines(input).map {
+    val rounds = input.lines().map {
         val pair = it.split(" ")
         val opponent = when(pair[0]) {
             "A" -> Rock()
@@ -28,7 +27,7 @@ fun day2A(input: String): Int{
 }
 
 fun day2B(input: String): Int{
-    val rounds = toLines(input).map {
+    val rounds = input.lines().map {
         val pair = it.split(" ")
         when(pair[0]) {
             "A" -> {

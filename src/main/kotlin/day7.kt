@@ -1,5 +1,4 @@
 import shared.getText
-import shared.toLines
 
 fun main() {
     val input = getText("day7.txt")
@@ -24,10 +23,9 @@ fun day7B(input: String): Int {
 }
 
 private fun getRootDir(input: String): Dir {
-    val terminalOutput = toLines(input)
     val rootDir = Dir("/", null)
     var currentDir = rootDir
-    terminalOutput.forEach {
+    input.lines().forEach {
         when {
             it == "$ cd /" -> currentDir = rootDir
             it.contains("dir") -> {

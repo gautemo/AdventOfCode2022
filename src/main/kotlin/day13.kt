@@ -1,5 +1,5 @@
+import shared.chunks
 import shared.getText
-import shared.toChunks
 
 fun main() {
     val input = getText("day13.txt")
@@ -8,9 +8,8 @@ fun main() {
 }
 
 fun day13A(input: String): Int {
-    val pairs = toChunks(input)
     var sum = 0
-    pairs.forEachIndexed { index, s ->
+    input.chunks().forEachIndexed { index, s ->
         val left = Packet(s.lines().first())
         val right = Packet(s.lines().last())
         if(left.compareTo(right) == -1) sum += index + 1

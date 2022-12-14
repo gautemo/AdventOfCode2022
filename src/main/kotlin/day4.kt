@@ -1,5 +1,4 @@
 import shared.getText
-import shared.toLines
 
 fun main() {
     val input = getText("day4.txt")
@@ -22,7 +21,7 @@ private fun IntRange.contains(other: IntRange) = other.all { contains(it) } || a
 private fun IntRange.overlaps(other: IntRange) = other.any { contains(it) }
 
 private fun inputToPairs(input: String): List<Pair<IntRange, IntRange>> {
-    return toLines(input).map { line ->
+    return input.lines().map { line ->
         val (a, b) = line.split(',').map {
             val (from, to) = it.split('-')
             from.toInt()..to.toInt()

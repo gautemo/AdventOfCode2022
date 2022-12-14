@@ -1,6 +1,6 @@
+import shared.chunks
 import shared.getText
 import shared.lcm
-import shared.toChunks
 
 fun main() {
     val input = getText("day11.txt")
@@ -17,9 +17,8 @@ fun day11B(input: String): Long {
 }
 
 private fun findMonkeyBusiness(input: String, rounds: Int, worryFree: Boolean = false): Long {
-    val monkeyInputs = toChunks(input)
     val divideByList = mutableListOf<Long>()
-    val monkeys = monkeyInputs.map { monkeyInput ->
+    val monkeys = input.chunks().map { monkeyInput ->
         val lines = monkeyInput.lines()
         val items = lines[1].split(":")[1].split(",").map { it.trim().toLong() }
         val operation = fun(old: Long): Long {

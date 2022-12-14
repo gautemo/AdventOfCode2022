@@ -1,6 +1,5 @@
+import shared.chunks
 import shared.getText
-import shared.toChunks
-import shared.toIntLines
 
 fun main() {
     val input = getText("day1.txt")
@@ -17,4 +16,4 @@ fun day1B(input: String): Int{
     return elves.sortedDescending().take(3).sum()
 }
 
-private fun getElves(input: String) = toChunks(input).map { toIntLines(it) }.map { it.sum() }
+private fun getElves(input: String) = input.chunks().map { chunk -> chunk.lines().map { it.toInt() } }.map { it.sum() }
