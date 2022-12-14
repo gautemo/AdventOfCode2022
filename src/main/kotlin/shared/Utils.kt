@@ -16,3 +16,5 @@ fun Char.placeInAlphabet(): Int {
     if(code < 97) return code - 65 + 27
     return code - 96
 }
+
+data class Point(val x: Int, val y: Int)

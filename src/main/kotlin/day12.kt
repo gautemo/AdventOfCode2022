@@ -1,5 +1,6 @@
 import shared.getText
 import shared.placeInAlphabet
+import shared.Point
 
 fun main() {
     val input = getText("day12.txt")
@@ -42,8 +43,6 @@ private fun bfs(map: String, start: Point, goal: List<Point>, canGo: (from: Char
     }
     throw Exception("should have found goal by now")
 }
-
-private data class Point(val x: Int, val y: Int)
 
 private fun String.at(point: Point) = lines().getOrNull(point.y)?.toCharArray()?.getOrNull(point.x)
 
