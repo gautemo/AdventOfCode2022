@@ -19,4 +19,9 @@ class Day16Test {
     fun `most possible pressure is 1651`() {
         assertEquals(1651, day16A(input))
     }
+
+    @Test
+    fun `elephant help gives most possible pressure is 1707`() {
+        assertEquals(1707, day16B(input))
+    }
 }
