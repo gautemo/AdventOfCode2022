@@ -28,16 +28,16 @@ fun day18B(input: String): Int {
 
     return lava.sumOf {  cube ->
         cube.sides().count { side ->
-            !lava.contains(side) && bfsSearchWater(side, lava,minX..maxX, minY..maxY, minZ..maxZ)
+            !lava.contains(side) && dfsSearchWater(side, lava,minX..maxX, minY..maxY, minZ..maxZ)
         }
     }
 }
 
-fun bfsSearchWater(start: XYZ, lava: List<XYZ>, x: IntRange, y: IntRange, z: IntRange): Boolean {
+fun dfsSearchWater(start: XYZ, lava: List<XYZ>, x: IntRange, y: IntRange, z: IntRange): Boolean {
     val explored = mutableListOf<XYZ>()
     val queue = mutableSetOf(start)
     while (queue.isNotEmpty()) {
-        val check = queue.first()
+        val check = queue.last()
         queue.remove(check)
         if(!x.contains(check.x) || !y.contains(check.y) || !z.contains(check.z)) return true
         explored.add(check)
