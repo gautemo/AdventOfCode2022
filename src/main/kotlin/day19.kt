@@ -37,7 +37,6 @@ private fun searchBest(start: Factory): Int {
             it.bestOutcome() <= best
         }
     }
-    println(best)
     return best
 }
 
